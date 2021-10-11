@@ -9,6 +9,7 @@ class CategoriesController < ApplicationController
   def create
     # render plain: params[:category].inspect
     @category = Category.new(category_params)
+    @category.user = User.first
     if @category.save
       flash[:notice] ="Category sucessfullly added"
       redirect_to category_path(@category)
