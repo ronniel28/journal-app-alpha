@@ -1,0 +1,9 @@
+<h1>Welcome <%= @user.username %></h1>
+
+<% @user.categories.each do |category| %>
+    <ul>
+      <li><%= category.description %></li>
+    </ul>
+<% end %>
+
+<p><%= link_to 'Log Out', logout_path, method: :delete %></p>
