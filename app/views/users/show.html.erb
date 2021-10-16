@@ -67,6 +67,7 @@
                 <% @user.categories.each do |category| %>
                     <ul>
                       <li><%= category.description %></li>
+                      <li><%= link_to 'show', category_path(category) %></li>
                     </ul>
                 <% end %>
                 </p>

@@ -1,24 +1,24 @@
 
 <div class="w-full">
 
-<% @category.errors.any? %>
+<% @task.errors.any? %>
 <ul>
-  <% @category.errors.full_messages.each do |msg| %>
+  <% @task.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
   <% end %>
 </ul>
-  <div class="h-2 bg-indigo"></div>
-    <div class="flex items-center justify-center h-screen">
-    <img class="object-cover w-full h-screen hidden md:block" src="https://images.unsplash.com/photo-1592474096967-7e5d62070cf7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80">
+  <div class="h-2 bg-indigo" ></div>
+    <div class="bg-cover flex items-center justify-center h-screen" style="background-image: url('https://images.unsplash.com/photo-1592474096967-7e5d62070cf7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80')">
       <div class="container mx-24 bg-white rounded shadow-lg">
         <div class="px-12 py-6">
           <div class="text-center">
-            <h1 class="font-normal text-3xl text-grey-darkest leading-loose my-3 w-full">Create Category</h1>
+            <h1 class="font-normal text-3xl text-grey-darkest leading-loose my-3 w-full">Add Task</h1>
             <div class="w-full text-center">
             <%= form_with model: @category do |form| %>
               
-                <div class="max-w-sm mx-auto p-1 pr-0 flex items-center">
+                <div class="max-w-sm mx-auto p-1 pr-0 flex-column items-center">
                  <%= form.text_field :description, placeholder:"Ex. Groceries", class:"flex-1 appearance-none rounded shadow p-3 text-grey-dark mr-2 focus:outline-none" %>
+                 <%= form.text_field :task_date, placeholder:"Format: DD-MM-YYYY", class:"flex-1 appearance-none rounded shadow p-3 text-grey-dark mr-2 focus:outline-none" %></br>
                  <%= form.submit 'Create', class: "appearance-none bg-blue-700 text-white text-base font-semibold tracking-wide uppercase p-3 rounded shadow hover:bg-blue-900" %> 
                 </div>
               
